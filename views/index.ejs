@@ -1,0 +1,30 @@
+
+
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <h1>Weather App</h1>
+    <form action="/" method="get">
+        <input type="text" name="city" id="locationInput" placeholder="Enter a city">
+        <button type="submit" id="searchButton">Search</button>
+    </form>
+    <div class="weather-info">
+        <div class="temp">
+
+            <img src="Images/Weather-PNG.png" alt="">
+            <p id="temperature"><%= Math.round(data.main.temp) %>°C</p>
+            <h2 id="location"> <%= data.name %></h2>
+            <p id="description"><%= data.weather[0].main %></p>
+        </div>
+        <div class="humidity">
+            <img src="/whether map/Images/pngegg (7).png" class="humidity-img" alt="">
+            <h2> <%= data.main.humidity %></h2>
+            <p>Humidity</p>
+        </div>
+
+    </div>
+
+    
+</div>
+
+<%- include("partials/footer.ejs") %>
